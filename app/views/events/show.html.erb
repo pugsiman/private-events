@@ -1,2 +1,13 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1><%= @event.title %></h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <h4>Users attending: </h4>
+    <ul class="list-group">
+      <% @event.attendees.each do |attendee| %>
+          <li class="list-group-item">
+            <%= link_to attendee.name, user_path(attendee) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
