@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :new]
+
   def new
     @event = Event.new
   end
@@ -15,7 +17,8 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @upcoming_events = Event.upcoming.paginate(page: params[:upcoming_events], per_page: 3)
+    @past_events = Event.past.paginate(page: params[:past_events], per_page: 3)
   end
 
   def show
@@ -23,6 +26,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
     if @event.destroy
       flash[:success] = 'Deleted!'
       redirect_to events_path
