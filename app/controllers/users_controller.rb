@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @created_events = current_user.created_events.paginate(page: params[:page], per_page: 3)
   end
 
   private

@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   root 'static#index'
 
-  get 'login'     =>  'sessions#new'
-  post 'login'    =>  'sessions#create'
-  delete 'logout' =>  'sessions#destroy'
-  get 'signup'    =>  'users#new'
+  get 'signup',    to: 'users#new'
+  get 'profile',   to: 'users#show'
+  get 'login',     to: 'sessions#new'
+  post 'login',    to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
   resources :users, only: [:new, :create, :show]
+  resources :events
+  resources :invitations
 end

@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Profile</h1>
+<br>
+<% if @created_events.present? %>
+<h3>Created events</h3>
+<p><%= render @created_events %></p>
+<%= will_paginate @created_events, class: "text-center" %>
+<% end %>
