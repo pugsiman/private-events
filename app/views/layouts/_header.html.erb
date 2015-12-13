@@ -1,12 +1,13 @@
 <header class="navbar">
   <div class="container">
-    <nav>
+    <nav class="navbar">
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Logout", logout_path, method: :delete %>(<%= current_user.name %>)</li>
           <li><%= link_to "Profile", profile_path %></li>
+          <li><%= link_to "Events", events_path %></li>
           <li><%= link_to "Create Event", new_event_path %></li>
+          <li><%= link_to "Logout", logout_path, method: :delete %>(<%= current_user.name %>)</li>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
           <li><%= link_to "Sign up", signup_path %></li>

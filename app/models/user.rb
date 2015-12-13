@@ -1,20 +1,20 @@
 class User < ActiveRecord::Base
-  # Users create events
-  has_many :created_events, class_name: Event,
-                            foreign_key: :creator_id,
-                            dependent:   :destroy
-  # Users attend to events as attendees
+  has_many :created_events,  class_name: Event,
+                             foreign_key: :creator_id,
+                             dependent:   :destroy
+
   has_many :attended_events, through: :invitations,
                              source:  :event
-  # Invited users can attend to events
-  has_many :invitations, foreign_key: :attendee_id,
-                         dependent:   :destroy
+
+  has_many :invitations,     foreign_key: :attendee_id,
+                             dependent:   :destroy
 
   before_create :generate_remember_token
   before_save { email.downcase! }
+  before_save { name.capitalize! }
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :name,     presence: true, length: { maximum: 35 }
+  validates :name,     presence: true, length: { maximum: 30 }
   validates :email,    presence: true, length: { maximum: 255 },
                        format:     { with: EMAIL_REGEX },
                        uniqueness: { case_sensitive: false }

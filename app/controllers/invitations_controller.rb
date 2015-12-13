@@ -10,4 +10,11 @@ class InvitationsController < ApplicationController
       redirect_to :back
     end
   end
+
+  def destroy
+    invitation = Invitation.find(params[:id])
+    current_user.invitations.destroy invitation
+    flash[:success] = 'You are no longer attending this event'
+    redirect_to :back
+  end
 end

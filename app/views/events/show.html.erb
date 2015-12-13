@@ -11,7 +11,7 @@
     </ul>
   </div>
 
-  <% if current_user != nil %>
+  <% if current_user.present? %>
     <% if current_user == @event.creator %>
       <div class="col-md-4 col-sm-12">
         <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-block btn-warning' %>
@@ -22,9 +22,8 @@
                                             data: {confirm: 'Delete?'},
                                             class: 'btn btn-block btn-danger' %>
       </div>
-    <% end %>
 
-    <% unless current_user == @event.creator %>
+    <% else %>
       <% if current_user.attended_events.include? @event %>
           <div class="col-md-4 col-sm-12">
             <%= link_to "Cancel Attendance", current_user.invitations.find_by(event_id: @event.id), method: :delete, data:{confirm: "Are you sure?"}, class: 'btn btn-block btn-danger' %>
