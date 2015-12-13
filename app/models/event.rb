@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   validates :location,    length: { maximum: 30 }
   validates :title,       length: { in: 4..30 }
 
-  default_scope { order('date asc') }
+  default_scope       { order('date asc') }
   scope :upcoming, -> { where('date > ?', Date.today) }
   scope :past,     -> { where('date < ?', Date.today) }
 end
