@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151212145117) do
     t.time     "time"
   end
 
-  add_index "events", ["creator_id"], name: "index_events_on_creator_id"
+  add_index "events", ["creator_id"], name: "index_events_on_creator_id", unique: true
 
   create_table "invitations", force: :cascade do |t|
     t.integer "event_id"
