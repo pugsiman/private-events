@@ -168,10 +168,12 @@ nav {
 @media (max-width: 482px) {
   .navbar_fx {
     line-height: 1.245;
+
     li {
       text-align: left;
       display: block;
       margin: 5% 0;
+
       a {
         letter-spacing: 0;
       }
@@ -182,7 +184,10 @@ nav {
 // INTRO //
 
 .intro {
-  background: linear-gradient(to left, #4b6cb7 , #182848);
+  background: #4b6cb7;
+  background: -webkit-linear-gradient(to left, #4b6cb7, #182848);
+  background: -o-linear-gradient(to left, #4b6cb7, #182848);
+  background: linear-gradient(to left, #4b6cb7, #182848);
   padding: 250px 0;
   color: #ffffff;
   h1 {
