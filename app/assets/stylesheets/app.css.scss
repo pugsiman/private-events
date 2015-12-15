@@ -10,10 +10,10 @@
 // TYPOGRAPHY //
 
 body {
-  padding-top: 3%;
+  padding-top: 1%;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  background: #f2f2f2;
+  background: #f4f4f4;
 }
 
 h1 {
@@ -52,10 +52,10 @@ h1 {
     left: 0;
     width: inherit;
     height: inherit;
-    box-shadow: inset 10.6em 0 0 rgba(252, 150, 0, 0.2),
-                inset 0 10.6em 0 rgba(252, 150, 0, 0.2),
-                inset -10.6em 0 0 rgba(252, 150, 0, 0.2),
-                inset 0 -10.6em 0 rgba(252, 150, 0, 0.2);
+    box-shadow: inset 10.6em 0 0 rgba(231, 76, 60, .25),
+                inset 0 10.6em 0 rgba(231, 76, 60, .25),
+                inset -10.6em 0 0 rgba(231, 76, 60, .25),
+                inset 0 -10.6em 0 rgba(231, 76, 60, .25);
     transition: box-shadow .6s;
   }
 
@@ -78,9 +78,80 @@ h1 {
   }
 }
 
+// NAVBAR //
+
+.navbar_fx {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2em;
+  li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1.5em;
+    padding: 0;
+  }
+  .current {
+    a {
+      &:before {
+        opacity: 1;
+        width: 100%;
+      }
+      &:after {
+        max-width: 100%;
+      }
+    }
+  }
+
+  a {
+    padding: 0.5em 0;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    letter-spacing: -1px;
+    text-decoration: none;
+    &:before, &:after {
+      position: absolute;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+    }
+    &:before {
+      bottom: 0;
+      display: block;
+      height: 2px;
+      width: 0%;
+      content: "";
+      background-color: #e74c3c;
+    }
+    &:after {
+      left: 0;
+      top: -2px;
+      padding: 0.5em 0;
+      position: absolute;
+      content: attr(data-hover);
+      color: rgba(0, 0, 0, .4);
+      white-space: nowrap;
+      max-width: 0%;
+      overflow: hidden;
+
+    }
+    &:hover:before{
+      opacity: 1;
+      width: 100%;
+    }
+    &:hover:after {
+      max-width: 100%;
+    }
+  }
+}
+
+.navbar {
+  clear: both;
+}
+
 // GENERAL //
+
 a {
-  transition: color .2s ease 0s;
+  // transition: color .2s ease 0s;
   &:hover {
     text-decoration: none;
     cursor: pointer;

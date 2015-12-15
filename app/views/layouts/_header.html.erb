@@ -1,23 +1,21 @@
 <header class="navbar">
   <div class="container">
+    <div class="navbar-header">
+      <%= link_to root_url do %>
+        <div class="logo"><h4>Aviv&#8482;</h4></div>
+      <% end %>
+    </div>
     <nav class="navbar">
-      <div class="navbar-header">
-        <%= link_to root_url do %>
-        <div class="logo">
-            <h4>Aviv&#8482;</h4>
-          </div>
-        <% end %>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+      <ul class="navbar_fx">
+        <%= create_nav_item('Home', root_url) %>
         <% if logged_in? %>
-          <li><%= link_to "Profile", profile_path %></li>
-          <li><%= link_to "Events", events_path %></li>
-          <li><%= link_to "Create Event", new_event_path %></li>
-          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <%= create_nav_item('Profile', profile_path) %>
+          <%= create_nav_item('Events', events_path) %>
+          <%= create_nav_item('Create event', new_event_path) %>
+          <%= create_nav_item('Logout', logout_path, :delete) %>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-          <li><%= link_to "Sign up", signup_path %></li>
+          <%= create_nav_item('Login', login_path) %>
+          <%= create_nav_item('Sign up', signup_path) %>
         <% end %>
       </ul>
     </nav>
