@@ -149,6 +149,21 @@ h1 {
   clear: both;
 }
 
+// NAVBAR MOBILE //
+
+@media (max-width: 480px) {
+  .navbar_fx {
+    li {
+      text-align: left;
+      display: block;
+      margin: 5% 0;
+      a {
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
 // GENERAL //
 
 a {
