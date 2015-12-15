@@ -82,6 +82,7 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    nprogress-rails (0.1.6.7)
     pg (0.18.4-x86-mingw32)
     puma (2.15.3)
     rack (1.6.4)
@@ -162,6 +163,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  nprogress-rails
   pg
   puma
   rails (= 4.2.5)
@@ -175,4 +177,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.10.6
+   1.11.0

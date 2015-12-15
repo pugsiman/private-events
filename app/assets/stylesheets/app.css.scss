@@ -85,6 +85,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.2em;
+  line-height: 1.25;
   li {
     display: inline-block;
     list-style: outside none none;
@@ -124,7 +125,7 @@ h1 {
     }
     &:after {
       left: 0;
-      top: -2px;
+      top: 0;
       padding: 0.5em 0;
       position: absolute;
       content: attr(data-hover);
