@@ -21,7 +21,16 @@
     </div>
 
     <%= yield %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= render 'layouts/footer' %>
+
     <!-- <%= debug(params) if Rails.env.development? %> -->
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script>
+    var alert = $('.alert');
+    setTimeout(function() { alert.fadeOut('slow'); }, 8000);
+    alert.click(function () { $(this).fadeOut('slow'); });
+    $('.intro-btn').click(function() { $(this).addClass('intro-btn-click'); });
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:profile]
+  before_action :logged_in_user, only: :profile
 
   def new
     if logged_in?

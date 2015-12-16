@@ -7,6 +7,7 @@ module SessionsHelper
   end
 
   def log_out
+    flash[:info] = 'Disconnected!'
     cookies.delete(:remember_token)
     @current_user = nil
   end
