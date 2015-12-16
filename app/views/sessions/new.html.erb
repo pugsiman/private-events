@@ -1,16 +1,25 @@
-<h1>Log in</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: 'btn btn-primary' %>
+<div class="wrapper">
+	<div class="login-container">
+		<h1>Welcome</h1>
+    <%= form_for(:session, url: login_path, as: 'login-form') do |f| %>
+      <%= f.email_field :email, placeholder: 'Username' %>
+      <%= f.password_field :password, placeholder: 'Password' %>
+      <%= f.submit "Log in",id: 'login-button' %>
     <% end %>
-    <br>
-    <p class="center">New user? <%= link_to "Press here", signup_path %> to sign up.</p>
-  </div>
+    <p>New user? <%= link_to "Press here", signup_path, style: 'color: darkgreen' %> to sign up.</p>
+
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </div>
