@@ -5,3 +5,9 @@
 <p><%= render @created_events %></p>
 <%= will_paginate @created_events, class: "text-center" %>
 <% end %>
+
+<% if @attended_events.any? %>
+    <h3 class="text-center">Attended events:</h3>
+    <%= render @attended_events %>
+    <%= will_paginate @attended_events, class: "text-center" %>
+<% end %>

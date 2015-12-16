@@ -14,9 +14,11 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <% flash.each do |type, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-#{type}") %>
-    <% end %>
+    <div class="container">
+      <% flash.each do |type, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{type}") %>
+      <% end %>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
