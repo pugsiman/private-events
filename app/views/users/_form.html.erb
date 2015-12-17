@@ -1,9 +1,0 @@
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.text_field :name, placeholder: 'Name' %>
-  <%= f.email_field :email, placeholder: 'Email' %>
-  <%= f.password_field :password, placeholder: 'Password' %>
-  <%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
-  <br>
-  <%= f.submit yield(:button_text), id: 'login-button' %>
-<% end %>
