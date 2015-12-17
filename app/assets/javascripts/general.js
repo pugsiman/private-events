@@ -1,11 +1,11 @@
+var alert = $('.alert');
+
+// clearing up the screen from flash messages
+setTimeout(function() {
+  alert.fadeOut('slow');
+}, 8000);
+
 $(function() {
-  // clearing up the screen from flash messages
-  var alert = $('.alert');
-
-  setTimeout(function() {
-    alert.fadeOut('slow');
-  }, 8000);
-
   alert.click(function() {
     $(this).fadeOut('slow');
   });
