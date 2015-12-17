@@ -2,10 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: :profile
 
   def new
-    if logged_in?
-      flash[:info] = 'You are already logged in.'
-      redirect_to root_url
-    end
+    redirect_to root_url if logged_in?
     @user = User.new
   end
 
