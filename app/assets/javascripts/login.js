@@ -1,9 +1,11 @@
 $(function() {
+  // returns true if pass the regex matching
   function validateEmail($email) {
     var emailReg = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
     return emailReg.test($email);
   };
 
+  // clears up the form
   $('#login-button').click(function(event) {
     var emailaddress = $('input[name="session[email]"]').val();
     if (validateEmail(emailaddress)) {
