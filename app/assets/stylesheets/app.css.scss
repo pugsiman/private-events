@@ -185,6 +185,10 @@ a {
 
 // DEBUGGING AND ERRORS //
 
+.alert {
+  cursor: pointer;
+}
+
 .debug_dump {
   clear: both;
   float: left;
