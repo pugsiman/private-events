@@ -8,14 +8,15 @@ class Event < ActiveRecord::Base
                          source:      :attendee,
                          dependent:   :destroy
 
-  validates_presence_of :title, :description, :location, :date # , :time
+  validates_presence_of :title, :description, :location, :date, :time
   validates :description, length: { in: 6..300 }
   validates :location,    length: { maximum: 30 }
   validates :title,       length: { in: 4..30 }
-  # validate  :valid_date
-  # validate  :valid_time
 
-  default_scope       { order('date asc') }
+  validate :valid_date
+  validate :valid_time
+
+  default_scope ->    { order('date asc') }
   scope :upcoming, -> { where('date > ?', Date.today) }
   scope :past,     -> { where('date < ?', Date.today) }
 

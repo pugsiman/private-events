@@ -28,3 +28,9 @@
   <br>
   <%= f.submit @event.new_record? ? "Create event" : "Edit event", class: "btn btn-primary" %>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.datepicker').datepicker({format: "dd/mm/yyyy", autoclose: true});
+    $('.timepicker').timepicker();
+  });
+</script>

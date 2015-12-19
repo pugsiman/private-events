@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker
+//= require jquery.timepicker.js
 //= require nprogress
 //= require nprogress-turbolinks
+//= require_tree .
