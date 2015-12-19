@@ -1,12 +1,12 @@
 <section class="events-wrapper">
   <h1><%= @user.name %>'s Profile</h1>
   <br>
-	<ul class="tabs">
-		<li class="active">Created events</li>
-		<li>Attended events</li>
-	</ul>
+  <ul class="tabs">
+    <li class="active">Created events</li>
+    <li>Attended events</li>
+  </ul>
 
-	<ul class="tab__content">
+  <ul class="tab__content">
     <li class="active">
       <div class="content__wrapper">
         <div class="row">
@@ -19,8 +19,8 @@
         </div>
       </div>
     </li>
-		<li>
-			<div class="content__wrapper">
+    <li>
+      <div class="content__wrapper">
         <div class="row">
           <% if @attended_events.present? %>
             <p><%= render @attended_events %></p>
@@ -29,7 +29,7 @@
             <p>Nothing to see here, yet.</p>
           <% end %>
         </div>
-			</div>
-		</li>
-	</ul>
+      </div>
+    </li>
+  </ul>
 </section>
