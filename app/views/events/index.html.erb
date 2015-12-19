@@ -1,5 +1,20 @@
-<h1>Events list</h1>
-<ul>
-<li><%= render @upcoming_events %></li>
-<li><%= render @past_events %></li>
-</ul>
+<section class="events-wrapper">
+  <h1>Events list</h1>
+	<ul class="tabs">
+		<li class="active">Upcoming events</li>
+		<li>Previous Events</li>
+	</ul>
+
+	<ul class="tab__content">
+		<li class="active">
+			<div class="content__wrapper">
+        <%= render @upcoming_events %>
+			</div>
+		</li>
+		<li>
+			<div class="content__wrapper">
+				<%= render @past_events %>
+			</div>
+		</li>
+	</ul>
+</section>
