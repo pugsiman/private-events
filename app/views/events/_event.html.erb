@@ -4,9 +4,11 @@
       <%= link_to event.title, event_path(event), style: 'text-decoration: none' %>
     </h4>
     <hr>
-    <h4><%= event.description %></h4>
+    <h5>
+      <%= event.description[0..50] %><% if event.description.size >= 50 %>...<% end %>
+    </h5>
     <br>
-    <h5><%= event.location %></h5>
+    <h5>Location: <%= event.location %></h5>
     <br>
     <h5>
       <span class="pull-right">

@@ -10,27 +10,19 @@
   <%= f.text_field :location, class: "form-control" %>
   <br>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3 col-sm-offset-2">
       <%= f.label :date %>
       <div class="input-group">
         <%= f.text_field :date, class: "form-control datepicker" %>
-        <span class="input-group-addon"></span>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3 col-sm-offset-2">
       <%= f.label :time %>
       <div class="input-group">
         <%= f.text_field :time, class: "form-control timepicker" %>
-        <span class="input-group-addon"></span>
       </div>
     </div>
   </div>
   <br>
   <%= f.submit @event.new_record? ? "Create event" : "Edit event", class: "btn btn-primary" %>
 <% end %>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('.datepicker').datepicker({format: "dd/mm/yyyy", autoclose: true});
-    $('.timepicker').timepicker();
-  });
-</script>
