@@ -1,3 +1,4 @@
+@import "mixins";
 $prim: #53e3a6;
 
 body {
@@ -43,7 +44,7 @@ body {
   &.form-success {
     .login-container {
       h1 {
-        transform: translateY(85px);
+        @include transform(translateY(85px));
       }
     }
   }
@@ -87,7 +88,7 @@ form {
     border: 1px solid rgba(255,255,255,.4);
     background-color: rgba(255,255,255,.2);
     width: 250px;
-    border-radius: 3px;
+    @include border-radius(3px);
     padding: 10px 15px;
     margin: 0 auto 10px;
     display: block;
@@ -115,7 +116,7 @@ form {
     border: 0;
     padding: 10px 15px;
     color: $prim;
-    border-radius: 3px;
+    @include border-radius(3px);
     width: 250px;
     cursor: pointer;
     font-size: 18px;
@@ -221,20 +222,20 @@ form {
 
 @-webkit-keyframes square {
   0% {
-    transform: translateY(0);
+    @include transform(translateY(0));
   }
 
   100% {
-    transform: translateY(-700px) rotate(600deg);
+    @include transform(translateY(-700px) rotate(600deg));
   }
 }
 
 @keyframes square {
   0% {
-    transform: translateY(0);
+    @include transform(translateY(0));
   }
 
   100% {
-    transform: translateY(-700px) rotate(600deg);
+    @include transform(translateY(-700px) rotate(600deg));
   }
 }
