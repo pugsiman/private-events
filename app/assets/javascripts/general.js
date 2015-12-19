@@ -1,8 +1,8 @@
-var alert = $('.alert');
+var ALERT_MSG = $('.alert');
 
 // clearing up the screen from flash messages
 setTimeout(function() {
-  alert.fadeOut('slow');
+  ALERT_MSG.fadeOut('slow');
 }, 6000);
 
 // returns true if pass the regex matching
@@ -12,7 +12,7 @@ function validateEmail($email) {
 };
 
 $(function() {
-  alert.click(function() {
+  ALERT_MSG.click(function() {
     $(this).fadeOut('slow');
   });
 

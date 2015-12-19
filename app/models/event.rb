@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
   validate :valid_date
   validate :valid_time
 
-  default_scope ->    { order('date asc') }
+  default_scope       { order(date: :asc) }
   scope :upcoming, -> { where('date > ?', Date.today) }
   scope :past,     -> { where('date < ?', Date.today) }
 
