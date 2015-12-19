@@ -3,7 +3,7 @@ var alert = $('.alert');
 // clearing up the screen from flash messages
 setTimeout(function() {
   alert.fadeOut('slow');
-}, 8000);
+}, 6000);
 
 // returns true if pass the regex matching
 function validateEmail($email) {

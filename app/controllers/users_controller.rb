@@ -38,8 +38,8 @@ class UsersController < ApplicationController
 
   def initialize_events
     @attended_events = @user.attended_events.paginate(page: params[:page],
-                                                      per_page: 3)
+                                                      per_page: 8)
     @created_events = @user.created_events.paginate(page: params[:page],
-                                                    per_page: 3)
+                                                    per_page: 8)
   end
 end

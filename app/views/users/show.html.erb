@@ -1,13 +1,35 @@
-<h1>Profile</h1>
-<br>
-<% if @created_events.present? %>
-<h3>Created events</h3>
-<p><%= render @created_events %></p>
-<%= will_paginate @created_events, class: "text-center" %>
-<% end %>
+<section class="events-wrapper">
+  <h1><%= @user.name %>'s Profile</h1>
+  <br>
+	<ul class="tabs">
+		<li class="active">Created events</li>
+		<li>Attended events</li>
+	</ul>
 
-<% if @attended_events.any? %>
-    <h3 class="text-center">Attended events:</h3>
-    <%= render @attended_events %>
-    <%= will_paginate @attended_events, class: "text-center" %>
-<% end %>
+	<ul class="tab__content">
+    <li class="active">
+      <div class="content__wrapper">
+        <div class="row">
+          <% if @created_events.present? %>
+            <p><%= render @created_events %></p>
+            <%= will_paginate @created_events, class: "text-center" %>
+          <% else %>
+            <p>Nothing to see here, yet.</p>
+          <% end %>
+        </div>
+      </div>
+    </li>
+		<li>
+			<div class="content__wrapper">
+        <div class="row">
+          <% if @attended_events.present? %>
+            <p><%= render @attended_events %></p>
+            <%= will_paginate @attended_events, class: "text-center" %>
+          <% else %>
+            <p>Nothing to see here, yet.</p>
+          <% end %>
+        </div>
+			</div>
+		</li>
+	</ul>
+</section>

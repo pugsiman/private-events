@@ -26,5 +26,5 @@
     </div>
   </div>
   <br>
-  <%= f.submit 'Create Event', class: "btn btn-primary" %>
+  <%= f.submit @event.new_record? ? "Create event" : "Edit event", class: "btn btn-primary" %>
 <% end %>

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :new]
-  before_action :event_creator, only:  [:edit, :update, :destroy]
-  before_action :find_event, only:     [:edit, :update, :destroy, :show]
+  before_action :event_creator,  only: [:edit, :update, :destroy]
+  before_action :find_event,     only: [:edit, :update, :destroy, :show]
 
   def new
     @event = Event.new
@@ -20,9 +20,9 @@ class EventsController < ApplicationController
 
   def index
     @upcoming_events = Event.upcoming.paginate(page: params[:upcoming_events],
-                                               per_page: 3)
+                                               per_page: 8)
     @past_events = Event.past.paginate(page: params[:past_events],
-                                       per_page: 3)
+                                       per_page: 8)
   end
 
   def edit

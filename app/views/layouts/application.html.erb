@@ -7,10 +7,11 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="theme-color" content="#3e7aff" />
+    <meta name='author' content='אביב לוינסקי' />
     <title>Private Events</title>
-    <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,500,600',
-                            media: 'all' %>
-    <%= stylesheet_link_tag 'application', media: 'all',
+    <%= stylesheet_link_tag 'application',
+                            '//fonts.googleapis.com/css?family=Roboto:400,500,600',
+                            media: 'all',
                             'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
@@ -18,13 +19,17 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
-      <% flash.each do |type, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{type}") %>
-      <% end %>
-    </div>
+
+    <% if flash.present? %>
+      <div class="container">
+        <% flash.each do |type, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-#{type}") %>
+        <% end %>
+      </div>
+    <% end %>
 
     <%= yield %>
+
     <%= render 'layouts/footer' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <!-- <%= debug(params) if Rails.env.development? %> -->

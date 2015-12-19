@@ -2,8 +2,8 @@
 	<div class="login-container">
 		<h1>Welcome</h1>
     <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.email_field :email, placeholder: 'Email' %>
-      <%= f.password_field :password, placeholder: 'Password' %>
+      <%= f.email_field :email, class: 'login-input', placeholder: 'Email' %>
+      <%= f.password_field :password, class: 'login-input', placeholder: 'Password' %>
       <%= f.submit "Log in",id: 'login-button' %>
     <% end %>
     <p>New user? <%= link_to "Press here", signup_path, style: 'color: darkgreen' %> to sign up.</p>
