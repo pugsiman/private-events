@@ -10,8 +10,7 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :title, :description, :location, :date, :time
   validates :description, length: { in: 5..600 }
-  validates :location,    length: { maximum: 30 }
-  validates :location,    length: { in: 2..10 }
+  validates :location,    length: { maximum: 40 }
   validates :title,       length: { in: 4..50 }
 
   validate :valid_date
