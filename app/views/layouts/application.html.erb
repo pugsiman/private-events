@@ -13,6 +13,7 @@
                             '//fonts.googleapis.com/css?family=Roboto:400,500,600',
                             media: 'all',
                             'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -31,7 +32,6 @@
     <%= yield %>
 
     <%= render 'layouts/footer' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <!-- <%= debug(params) if Rails.env.development? %> -->
   </body>
 </html>
