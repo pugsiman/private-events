@@ -8,17 +8,15 @@ $.rails.allowAction = function(link) {
   return false;
 };
 
-// User click confirm button
 $.rails.confirmed = function(link) {
   link.data('confirm', null);
   link.trigger('click.rails');
 };
 
-// Display the confirmation dialog
 $.rails.showConfirmationDialog = function(link) {
   swal({
     title: 'Are you sure?',
-    text: 'You will not be able to recover the event.',
+    text: 'You will not be able to recover this event.',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#DD6B55',
@@ -27,6 +25,6 @@ $.rails.showConfirmationDialog = function(link) {
   },
   function() {
     $.rails.confirmed(link);
-    swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+    swal('Deleted!', 'Your event has been deleted.', 'success');
   });
 };
