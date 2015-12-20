@@ -1,25 +1,25 @@
 <%= form_for(@event) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.text_field :title, class: 'form-control', required: true %>
   <br>
   <%= f.label :description %>
   <%= f.text_area :description, class: "form-control ", size:'20x3'%>
   <br>
   <%= f.label :location %>
-  <%= f.text_field :location, class: "form-control" %>
+  <%= f.text_field :location, class: "form-control", required: true %>
   <br>
   <div class="row">
     <div class="col-sm-3 col-sm-offset-2">
       <%= f.label :date %>
       <div class="input-group">
-        <%= f.text_field :date, class: "form-control datepicker" %>
+        <%= f.text_field :date, class: "form-control datepicker", required: true %>
       </div>
     </div>
     <div class="col-sm-3 col-sm-offset-2">
       <%= f.label :time %>
       <div class="input-group">
-        <%= f.text_field :time, class: "form-control timepicker" %>
+        <%= f.text_field :time, class: "form-control timepicker", required: true %>
       </div>
     </div>
   </div>
