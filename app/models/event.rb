@@ -29,7 +29,7 @@ class Event < ActiveRecord::Base
 
   def valid_date
     if date < Date.today
-      errors.add(:date, "Event can't be created in the past")
+      errors.add(:event, "can't be created in the past")
     else
       date.present?
     end
@@ -38,6 +38,6 @@ class Event < ActiveRecord::Base
   def valid_time
     return unless date == Date.today && date.present? && time.present?
     return unless time.hour < Time.now.hour
-    errors.add(:time, "Event can't be created in the past")
+    errors.add(:event, "can't be created in the past")
   end
 end
