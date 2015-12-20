@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 

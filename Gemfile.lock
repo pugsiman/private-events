@@ -75,6 +75,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-timepicker-rails (1.4.3)
       railties (>= 3.1.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -169,6 +172,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-timepicker-rails
+  jquery-turbolinks
   nprogress-rails
   pg
   puma
