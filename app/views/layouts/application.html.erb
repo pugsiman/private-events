@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Private Events</title>
-    <style type="text/css">.no-fouc{visibility:hidden;}</style>
-    <script type="text/javascript">document.documentElement.className='no-fouc';</script>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="theme-color" content="#5288ff" />
+    <%= render 'layouts/anti-fouc' %>
+    <%= render 'layouts/webapp_meta_tags' %>
     <%= stylesheet_link_tag 'application',
                             '//fonts.googleapis.com/css?family=Roboto:400,500,600',
                              media: 'all',
                             'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', async: Rails.env.production?, 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', async: Rails.env.production?,
+                               'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -31,7 +28,6 @@
     <% end %>
 
     <%= yield %>
-    <script type="text/javascript">document.addEventListener('DOMContentLoaded',function(event){document.documentElement.classList.remove("no-fouc");});</script>
     <%= render 'layouts/footer' %>
     <%# debug(params) if Rails.env.development? %>
   </body>
