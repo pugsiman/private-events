@@ -18,4 +18,5 @@
 //= require jquery.timepicker.js
 //= require nprogress
 //= require nprogress-turbolinks
+//= require sweetalert.min
 //= require_tree .
