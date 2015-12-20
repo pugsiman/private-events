@@ -1,6 +1,4 @@
-$(document).ready(function() {
-
-  // Variables
+$(function() {
   var clickedTab = $('.tabs > .active');
   var tabWrapper = $('.tab__content');
   var activeTab = tabWrapper.find('.active');

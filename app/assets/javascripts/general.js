@@ -1,10 +1,3 @@
-var ALERT_MSG = $('.alert');
-
-// clearing up the screen from flash messages
-setTimeout(function() {
-  ALERT_MSG.fadeOut('slow');
-}, 6000);
-
 // returns true if pass the regex matching
 function validateEmail($email) {
   var emailReg = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
@@ -12,6 +5,13 @@ function validateEmail($email) {
 };
 
 $(function() {
+  var ALERT_MSG = $('.alert');
+
+  // clearing up the screen from flash messages
+  setTimeout(function() {
+    ALERT_MSG.fadeOut(1000);
+  }, 6000);
+
   ALERT_MSG.click(function() {
     $(this).fadeOut('slow');
   });
