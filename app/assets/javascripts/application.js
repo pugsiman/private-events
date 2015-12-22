@@ -17,7 +17,7 @@
 //= require bootstrap-datepicker
 //= require jquery.timepicker.js
 //= require sweetalert.min
-//= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
 //= require_tree .
+//= require turbolinks

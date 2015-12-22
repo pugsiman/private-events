@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  before_create :generate_remember_token
+  before_save { email.downcase! }
+  before_save { name.capitalize! }
+
   has_many :created_events,  class_name: Event,
                              foreign_key: :creator_id,
                              dependent:   :destroy
@@ -9,16 +13,13 @@ class User < ActiveRecord::Base
   has_many :invitations,     foreign_key: :attendee_id,
                              dependent:   :destroy
 
-  before_create :generate_remember_token
-  before_save { email.downcase! }
-  before_save { name.capitalize! }
-
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :name,     presence: true, length: { maximum: 30 }
-  validates :email,    presence: true, length: { maximum: 255 },
-                       format:     { with: EMAIL_REGEX },
-                       uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { in: 6..20 }, allow_nil: true
+  validates_presence_of :name, :email, :password
+  validates :name,  length:     { maximum: 30 }
+  validates :email, length:     { maximum: 255 },
+                    format:     { with: EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+  validates :password, length: { in: 6..20 }, allow_nil: true
   has_secure_password
 
   def self.create_token

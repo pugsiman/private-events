@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  before_create :format_time
+  before_save :format_time
 
   belongs_to :creator,   class_name:  'User'
   has_many :invitations, foreign_key: :event_id,
