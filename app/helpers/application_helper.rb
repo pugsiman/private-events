@@ -13,9 +13,10 @@ module ApplicationHelper
   end
 
   # helper method following DRY principle using both mentioned methods.
-  # consider that both nav_link and current_page methods are using the same
-  # path variable.
+  # consider that both create_nav_link and current_page methods are using the
+  # same path variable.
   def create_nav_item(string, path, method = nil)
-    content_tag :li, create_nav_link(string, path, method), class: current_page(path)
+    content_tag :li, create_nav_link(string, path, method),
+                class: current_page(path)
   end
 end
