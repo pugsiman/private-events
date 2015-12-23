@@ -19,6 +19,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
 
 group :development, :test do
+  gem 'better_errors'
   gem 'byebug'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'

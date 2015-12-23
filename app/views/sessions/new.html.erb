@@ -4,7 +4,7 @@
     <%= form_for(:session, url: login_path) do |f| %>
       <%= f.email_field :email, class: 'login-input', required: true, placeholder: 'Email' %>
       <%= f.password_field :password, class: 'login-input', required: true, placeholder: 'Password' %>
-      <%= f.submit "Log in",id: 'login-button' %>
+      <%= f.submit "Log in",id: 'login-button', data: { disable_with: 'Submitting...' } %>
     <% end %>
     <p>New user? <%= link_to "Press here", signup_path, style: 'color: darkgreen' %> to sign up.</p>
 
