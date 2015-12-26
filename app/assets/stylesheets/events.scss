@@ -1,5 +1,9 @@
 @import "mixins";
 
+#event_time, #event_date {
+  border-radius: 4px;
+}
+
 .bg-color{
   background-color: #46a1de;
   transition-duration: .5s;

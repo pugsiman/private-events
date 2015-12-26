@@ -13,7 +13,8 @@
  *= require_tree .
  *= require nprogress
  *= require nprogress-bootstrap
- *= require bootstrap-datepicker
- *= require jquery.timepicker.css
  *= require sweetalert
+ *= require pickadate/default
+ *= require pickadate/default.date
+ *= require pickadate/default.time
  */

@@ -14,8 +14,9 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker
-//= require jquery.timepicker.js
+//= require pickadate/picker
+//= require pickadate/picker.date
+//= require pickadate/picker.time
 //= require sweetalert.min
 //= require nprogress
 //= require nprogress-turbolinks

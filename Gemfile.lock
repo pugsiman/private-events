@@ -96,6 +96,8 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     nprogress-rails (0.1.6.7)
     pg (0.18.4-x86-mingw32)
+    pickadate-rails (3.5.6.0)
+      railties (>= 3.1.0)
     puma (2.15.3)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -182,6 +184,7 @@ DEPENDENCIES
   jquery-turbolinks
   nprogress-rails
   pg
+  pickadate-rails
   puma
   rails (= 4.2.5)
   rails_12factor
