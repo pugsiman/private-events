@@ -11,12 +11,6 @@
     <h5>Location: <%= event.location %></h5>
     <br>
     <h5>
-      <span class="pull-left">
-        Date:
-        <%= event.date %>
-      </span>
-    </h5>
-    <h5>
       <span class="pull-right">
         Event by:
         <%= link_to event.creator.name, user_path(event.creator) %>

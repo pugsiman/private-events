@@ -7,7 +7,18 @@
   </div>
 </div>
 <script type="text/javascript">
+<<<<<<< HEAD
 $(function () {
   $('.datepicker').datetimepicker();
 });
+=======
+  $(document).ready(function () {
+    $('.datepicker').pickadate({
+      format: "Date: dd/mm/yyyy",
+      formatSubmit: 'dd/mm/yyyy',
+      hiddenName: true
+    });
+    $('.timepicker').pickatime();
+  });
+>>>>>>> parent of 2e9ae98... New event form that makes more sense
 </script>
