@@ -13,6 +13,9 @@
       formatSubmit: 'dd/mm/yyyy',
       hiddenName: true
     });
-    $('.timepicker').pickatime();
+    $('.timepicker').pickatime({
+      min: [6,00],
+      max: [23,30]
+    });
   });
 </script>
