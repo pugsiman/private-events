@@ -10,18 +10,13 @@
   <%= f.text_field :location, class: "form-control", required: true %>
   <br>
   <div class="row">
-    <div class="col-sm-4 col-xs-6">
-      <%= f.label :date %>
-      <div class="input-group">
+    <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+      <%= f.label :When? %>
+      <div class="input-group date datepicker">
         <%= f.text_field :date, class: "form-control datepicker", required: true %>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-      </div>
-    </div>
-    <div class="col-sm-4 col-sm-offset-4 col-xs-6">
-      <%= f.label :time %>
-      <div class="input-group">
-        <%= f.text_field :time, class: "form-control timepicker", required: true %>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </span>
       </div>
     </div>
   </div>
