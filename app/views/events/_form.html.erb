@@ -4,28 +4,26 @@
   <%= f.text_field :title, class: 'form-control', required: true %>
   <br>
   <%= f.label :description %>
-  <%= f.text_area :description, class: "form-control ", size:'20x3'%>
+  <%= f.text_area :description, class: "form-control ", size:'20x3', required: true %>
   <br>
   <%= f.label :location %>
   <%= f.text_field :location, class: "form-control", required: true %>
   <br>
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <div class="col-sm-4 col-xs-6">
       <%= f.label :When? %>
-      <div class="input-group date datepicker">
+      <div class="input-group">
         <%= f.text_field :date, class: "form-control datepicker", required: true %>
-<<<<<<< HEAD
         <span class="input-group-addon">
           <i class="glyphicon glyphicon-calendar"></i>
         </span>
-=======
       </div>
     </div>
     <div class="col-sm-4 col-sm-offset-4 col-xs-6">
       <%= f.label :time %>
       <div class="input-group">
         <%= f.text_field :time, class: "form-control timepicker", required: true %>
->>>>>>> parent of 2e9ae98... New event form that makes more sense
+        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
       </div>
     </div>
   </div>
