@@ -2,13 +2,13 @@
 $prim: #53e3a6;
 
 .signup-wrapper {
-  height: 560px;
+  height: 600px;
 }
 
 #signup-button {
   appearance: none;
   outline: 0;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .9);
   border: 0;
   padding: 10px 15px;
   color: $prim;
@@ -19,6 +19,6 @@ $prim: #53e3a6;
   transition-duration: .25s;
 
   &:hover {
-    background-color: rgb(245, 247, 249);
+    background-color: #fbfbfb;
   }
 }

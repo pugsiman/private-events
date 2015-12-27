@@ -68,7 +68,7 @@ body {
     position: relative;
     margin-bottom: 10px;
     z-index: 2;
-    a{
+    a {
       &:hover {
         text-decoration: underline;
       }
@@ -85,8 +85,8 @@ form {
     display: block;
     appearance: none;
     outline: 0;
-    border: 1px solid rgba(255,255,255,.4);
-    background-color: rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .2);
     width: 250px;
     @include border-radius(3px);
     padding: 10px 15px;
@@ -99,7 +99,7 @@ form {
     font-weight: 300;
 
     &:hover {
-      background-color: rgba(255,255,255,.4);
+      background-color: rgba(255, 255, 255, .4);
     }
 
     &:focus {
@@ -226,7 +226,7 @@ form {
   }
 
   100% {
-    @include transform(translateY(-700px) rotate(600deg));
+    @include transform(translateY(-900px) rotate(600deg));
   }
 }
 
@@ -236,6 +236,6 @@ form {
   }
 
   100% {
-    @include transform(translateY(-700px) rotate(600deg));
+    @include transform(translateY(-900px) rotate(600deg));
   }
 }
