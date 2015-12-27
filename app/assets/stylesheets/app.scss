@@ -191,6 +191,9 @@ a {
     text-decoration: none;
     cursor: pointer;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 // DEBUGGING AND ERRORS //
