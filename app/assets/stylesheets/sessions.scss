@@ -2,19 +2,32 @@
 $prim: #53e3a6;
 
 body {
-  ::-webkit-input-placeholder,
-  :-ms-input-placeholder,
-  :-moz-placeholder,
-  ::-moz-placeholder {
-    color: white;
-    font-weight: 300;
-  }
+    ::-webkit-input-placeholder {
+     /* WebKit browsers */
+     color: white;
+     font-weight: 300;
+   }
 
-  :-moz-placeholder,
-  ::-moz-placeholder {
-    opacity: 1;
-  }
-}
+    :-moz-placeholder {
+     /* Mozilla Firefox 4 to 18 */
+     color: white;
+     opacity: 1;
+     font-weight: 300;
+   }
+
+    ::-moz-placeholder {
+     /* Mozilla Firefox 19+ */
+     color: white;
+     opacity: 1;
+     font-weight: 300;
+   }
+
+    :-ms-input-placeholder {
+     /* Internet Explorer 10+ */
+     color: white;
+     font-weight: 300;
+   }
+ }
 
 .wrapper {
   background: #50a3a2;
@@ -48,7 +61,7 @@ body {
     font-size: 40px;
     transition-duration: 1s;
     transition-timing-function: ease-in-put;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   p {
