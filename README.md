@@ -1,3 +1,4 @@
 ## Private Events
-##### events scheduler app
-#### Watch it live: https://shrouded-earth-6357.herokuapp.com/
+###### events scheduler app
+A scheduler app to create and attend events.
+##### Watch it live: https://event-scheduler.herokuapp.com/
