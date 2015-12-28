@@ -1,25 +1,19 @@
 <div class="col-md-6">
-  <div class="well border-blue" style="background: whitesmoke;">
-    <h4 class="text-center">
+  <div class="well">
+    <h3>
       <%= link_to event.title, event_path(event), style: 'text-decoration: none' %>
-    </h4>
-    <hr>
-    <h5>
-      <%= event.description[0..50] %><% if event.description.size >= 50 %>...<% end %>
+    </h3>
+    <h5 style="font-weight: 500;">
+      <%= event.description[0..45] %><% if event.description.size >= 45 %>...<% end %>
     </h5>
     <br>
-    <h5>Location: <%= event.location %></h5>
-    <br>
+    <h5><%= event.location %></h5>
     <h5>
-      <span class="pull-left">
-        Date: <%= event.date %>
-      </span>
+        <%= event.date.strftime("%d/%m/%Y") %> at <%= event.time.to_s[-13..-8] %>
     </h5>
     <h5>
-      <span class="pull-right">
         Event by:
         <%= link_to event.creator.name, user_path(event.creator) %>
-      </span>
     </h5>
   </div>
 </div>
