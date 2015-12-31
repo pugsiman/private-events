@@ -67,7 +67,7 @@
   position: relative;
   border: none;
   overflow: visible;
-  @include transition(color .4s);
+  @include transition(color .25s);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:focus {

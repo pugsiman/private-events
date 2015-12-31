@@ -21,26 +21,24 @@ $(function() {
     $(this).addClass('intro-btn-click');
   });
 
-  // clears up the login form
-  $('#login-button').click(function(event) {
-    var emailaddress = $('input[name="session[email]"]').val();
-    if (validateEmail(emailaddress)) {
-      $('form').fadeOut(400);
-      $('p').fadeOut(400);
-      $('.wrapper').addClass('form-success');
-    } else {
-      console.log(validateEmail(emailaddress));
-    };
-  });
+  // clears up the login or signup form
+  $('#submit-button').click(function(event) {
+    var loginEmailAddress = $('input[name="session[email]"]');
+    var signupEmailAddress = $('input[name="user[email]"]');
 
-  // clears up the signup form
-  $('#signup-button').click(function(event) {
-    var emailaddress = $('input[name="user[email]"]').val();
-    if (validateEmail(emailaddress)) {
-      $('form').fadeOut(400);
+    if (loginEmailAddress.length) {
+      var currentEmailAdress = loginEmailAddress.val();
+      var formElements = $('form, p');
+    } else {
+      var currentEmailAdress = signupEmailAddress.val();
+      var formElements = $('form');
+    };
+
+    if (validateEmail(currentEmailAdress)) {
+      formElements.fadeOut(250);
       $('.wrapper').addClass('form-success');
     } else {
-      console.log(validateEmail(emailaddress));
+      console.log(validateEmail(currentEmailAdress));
     };
   });
 });

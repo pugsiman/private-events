@@ -109,10 +109,10 @@ form {
     }
   }
 
-  #login-button {
+  #submit-button {
     appearance: none;
     outline: 0;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .9);
     border: 0;
     padding: 10px 15px;
     color: $prim;
@@ -123,7 +123,7 @@ form {
     transition-duration: .25s;
 
     &:hover {
-      background-color: rgb(245, 247, 249);
+      background-color: #fbfbfb;
     }
   }
 
