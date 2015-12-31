@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
   validate :valid_time
 
   default_scope       { order(date: :asc) }
-  scope :upcoming, -> { where('date > ?', Date.today) }
+  scope :upcoming, -> { where('date >= ?', Date.today) }
   scope :past,     -> { where('date < ?', Date.today) }
 
   def format_time
@@ -28,11 +28,11 @@ class Event < ActiveRecord::Base
 
   def valid_date
     return unless date && date < Date.today
-    errors.add(:event, "can't be created in the past")
+    errors.add(:event_date, "can't be in the past")
   end
 
   def valid_time
     return unless date == Date.today && time && time.hour < Time.now.hour
-    errors.add(:event, "can't be created in the past")
+    errors.add(:event_time, "can't be in the past")
   end
 end
