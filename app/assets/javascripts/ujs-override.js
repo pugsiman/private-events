@@ -25,6 +25,5 @@ $.rails.showConfirmationDialog = function(link) {
   },
   function() {
     $.rails.confirmed(link);
-    swal('Deleted!', 'Your event has been deleted.', 'success');
   });
 };
