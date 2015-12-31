@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def generate_remember_token
-    self.remember_token = User.digest(User.create_token)
-  end
+    def generate_remember_token
+      self.remember_token = User.digest(User.create_token)
+    end
 end

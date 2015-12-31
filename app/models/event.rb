@@ -17,22 +17,23 @@ class Event < ActiveRecord::Base
   validate :valid_time
 
   default_scope       { order(date: :asc) }
-  scope :upcoming, -> { where('date >= ?', Date.today) }
-  scope :past,     -> { where('date < ?', Date.today) }
+  scope :upcoming, -> { where('date >= ?', Time.zone.today) }
+  scope :past,     -> { where('date < ?', Time.zone.today) }
 
   def format_time
     self.time = time.to_datetime.change(day: date.day,
                                         month: date.month,
-                                        year: date.year).to_time
+                                        year: date.year)
   end
 
   def valid_date
-    return unless date && date < Date.today
+    return unless date && date < Time.zone.today
     errors.add(:event_date, "can't be in the past")
   end
 
   def valid_time
-    return unless date == Date.today && time && time.hour < Time.now.hour
+    return unless date == Time.zone.today &&
+                  time && time.hour < Time.zone.now.hour
     errors.add(:event_time, "can't be in the past")
   end
 end
