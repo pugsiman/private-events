@@ -13,7 +13,6 @@ class EventsController < ApplicationController
       flash[:success] = 'Created event!'
       redirect_to @event
     else
-      flash[:danger] = 'Failed to create event'
       render :new
     end
   end

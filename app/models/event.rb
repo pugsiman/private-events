@@ -21,23 +21,18 @@ class Event < ActiveRecord::Base
   scope :past,     -> { where('date < ?', Date.today) }
 
   def format_time
-    date_today = Date.today
-    self.time = time.to_datetime.change(day: date_today.day,
-                                        month: date_today.month,
-                                        year: date_today.year).to_time
+    self.time = time.to_datetime.change(day: date.day,
+                                        month: date.month,
+                                        year: date.year).to_time
   end
 
   def valid_date
-    if date < Date.today
-      errors.add(:event, "can't be created in the past")
-    else
-      date.present?
-    end
+    return unless date && date < Date.today
+    errors.add(:event, "can't be created in the past")
   end
 
   def valid_time
-    return unless date == Date.today && date.present? && time.present?
-    return unless time.hour < Time.now.hour
+    return unless date == Date.today && time && time.hour < Time.now.hour
     errors.add(:event, "can't be created in the past")
   end
 end

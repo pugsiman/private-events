@@ -112,7 +112,7 @@ header {
 }
 
 .navbar {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 // FOOTER //
@@ -160,6 +160,8 @@ a {
   ul{
     color: #333;
   	margin: 0 0 30px 0;
+    text-align: left;
+    list-style: none;
   }
 }
 
