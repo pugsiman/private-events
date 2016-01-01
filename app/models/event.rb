@@ -1,6 +1,4 @@
 class Event < ActiveRecord::Base
-  before_save :format_time
-
   belongs_to :creator,   class_name:  'User'
   has_many :invitations, foreign_key: :event_id,
                          dependent:   :destroy
@@ -19,12 +17,6 @@ class Event < ActiveRecord::Base
   default_scope       { order(date: :asc) }
   scope :upcoming, -> { where('date >= ?', Time.zone.today) }
   scope :past,     -> { where('date < ?', Time.zone.today) }
-
-  def format_time
-    self.time = time.to_datetime.change(day: date.day,
-                                        month: date.month,
-                                        year: date.year)
-  end
 
   def valid_date
     return unless date && date < Time.zone.today
