@@ -8,11 +8,12 @@
 <script type="text/javascript">
   $(function () {
     $('.datepicker').pickadate({
-      format: "dd/mm/yyyy",
       formatSubmit: 'dd/mm/yyyy',
       hiddenName: true
     });
     $('.timepicker').pickatime({
+      formatSubmit: 'HH:i',
+      hiddenName: true,
       min: [6,30],
       max: [23,30]
     });

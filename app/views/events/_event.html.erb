@@ -8,7 +8,7 @@
     </div>
     <div class="arrival-details">
       <h5><%= event.location %></h5>
-      <h5><%= event.date.strftime("%d/%m/%Y") %> at <%= event.time.to_s[-13..-8] %></h5>
+      <h5><%= event.date.strftime("%d/%m/%Y") %> <%= event.time.strftime("at %I:%M %p") %></h5>
       <h5>
         Event by:
         <%= link_to event.creator.name, user_path(event.creator) %>
