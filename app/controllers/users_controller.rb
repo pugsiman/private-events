@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:profile, :show]
+  before_action :logged_in_user, only: :show
 
   def new
     redirect_to root_url if logged_in?
