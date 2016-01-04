@@ -19,27 +19,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    initialize_events
-  end
-
-  def profile
-    @user = current_user
-    initialize_events
-    render :show
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
-  end
-
-  def initialize_events
+    params[:id] ? @user = User.find(params[:id]) : @user = current_user
     @attended_events = @user.attended_events.paginate(page: params[:page],
                                                       per_page: 8)
     @created_events = @user.created_events.paginate(page: params[:page],
                                                     per_page: 8)
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+    end
 end
