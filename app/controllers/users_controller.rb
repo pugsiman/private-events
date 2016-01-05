@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    params[:id] ? @user = User.find(params[:id]) : @user = current_user
+    @user = params[:id] ? User.find(params[:id]) : current_user
     @attended_events = @user.attended_events.paginate(page: params[:page],
                                                       per_page: 8)
     @created_events = @user.created_events.paginate(page: params[:page],
